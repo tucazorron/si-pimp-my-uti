@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'beds/index'
+  get 'beds/new'
+  get 'beds/create'
+  get 'beds/destroy'
   get 'pacients/index'
   get 'pacients/new'
   get 'pacients/create'
