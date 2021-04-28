@@ -1,0 +1,2 @@
+class Wing < ApplicationRecord
+end
