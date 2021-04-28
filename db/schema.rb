@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_28_185656) do
+ActiveRecord::Schema.define(version: 2021_04_28_190631) do
+
+  create_table "bed_types", force: :cascade do |t|
+    t.string "type_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "beds", force: :cascade do |t|
+    t.boolean "busy"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "pacient_id", null: false
+    t.index ["pacient_id"], name: "index_beds_on_pacient_id"
+  end
+
+  create_table "genders", force: :cascade do |t|
+    t.integer "code"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "pacients", force: :cascade do |t|
     t.string "name"
@@ -22,4 +43,11 @@ ActiveRecord::Schema.define(version: 2021_04_28_185656) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "wings", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "beds", "pacients"
 end
