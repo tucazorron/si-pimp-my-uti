@@ -1,3 +1,46 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// Layout styles
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.b-col {
+  flex: 50%;
+  position: relative;
+  height: 100%;
+}
+
+// Login Form
+.login-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 30% auto;
+}
+
+.input-box {
+  height: 2.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+.btn {
+  background: #0172c0;
+  border-radius: 4px;
+  height: 2.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  border: 1px solid #0172c0;
+}
+
+// Hero
+.hero-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    image-url("hero.jpg");
+  background-size: cover;
+  height: 100%;
+}
