@@ -1,4 +1,4 @@
-class PacientsController < ApplicationController
+class PatientsController < ApplicationController
   def index
   end
 
@@ -6,5 +6,8 @@ class PacientsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def show
   end
 end

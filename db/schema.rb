@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 2021_04_28_200902) do
     t.boolean "busy"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "pacient_id", null: false
+    t.integer "patient_id", null: false
     t.integer "bed_type_id", null: false
     t.integer "wing_id", null: false
     t.index ["bed_type_id"], name: "index_beds_on_bed_type_id"
-    t.index ["pacient_id"], name: "index_beds_on_pacient_id"
+    t.index ["patient_id"], name: "index_beds_on_patient_id"
     t.index ["wing_id"], name: "index_beds_on_wing_id"
   end
 
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_04_28_200902) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "pacients", force: :cascade do |t|
+  create_table "patients", force: :cascade do |t|
     t.string "name"
     t.string "rg"
     t.integer "age"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_04_28_200902) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "gender_id", null: false
-    t.index ["gender_id"], name: "index_pacients_on_gender_id"
+    t.index ["gender_id"], name: "index_patients_on_gender_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2021_04_28_200902) do
   end
 
   add_foreign_key "beds", "bed_types"
-  add_foreign_key "beds", "pacients"
+  add_foreign_key "beds", "patients"
   add_foreign_key "beds", "wings"
-  add_foreign_key "pacients", "genders"
+  add_foreign_key "patients", "genders"
 end
