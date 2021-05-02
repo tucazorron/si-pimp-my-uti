@@ -10,10 +10,8 @@ class PatientsController < ApplicationController
 
     if @patient.save
       render json: @patient, status: :created, location: @patient
-
     else
       render json: @patient.errors, status: :unprocessable_entity
-
     end
   end
 
