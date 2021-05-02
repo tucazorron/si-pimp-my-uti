@@ -1,2 +1,14 @@
 <h1>Patients#index</h1>
 <p>Find me in app/views/patients/index.html.erb</p>
+
+
+<% @patients.each do |patient| %>
+    <tr>
+      <td><%= patient.name %></td>
+      <td><%= patient.rg %></td>
+      <td><%= patient.age %></td>
+      <td><%= patient.cause %></td>
+      <td><%= patient.description %></td>
+      <td><%= patient.gender_id %></td>
+    </tr>
+<% end %>
