@@ -1,6 +1,7 @@
 // Layout styles
 .container {
   display: flex;
+  margin-left: 20rem;
 }
 
 .b-col {
@@ -15,7 +16,6 @@
   background-size: cover;
   height: 100%;
 }
-
 
 // Login Form
 form {
@@ -52,7 +52,7 @@ form {
     border: 1px solid #0172c0;
     margin: 1.5rem;
   }
-  
+
   .forgot-password-link {
     width: 60%;
   }

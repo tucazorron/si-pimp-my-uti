@@ -1,7 +1,8 @@
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 12px;
+  letter-spacing: 0.1px;
 
   .sidenav {
     height: 100%;
@@ -10,9 +11,17 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(30, 76, 129);
+    background: #ffffff;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.14),
+      0px 6px 30px rgba(0, 0, 0, 0.12), 0px 8px 10px rgba(0, 0, 0, 0.2);
     overflow-x: hidden;
     padding-top: 20px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
   }
 
   .sidenav a {
@@ -20,12 +29,12 @@ body {
     text-decoration: none;
     font-size: 18px;
     font-family: "Roboto";
-    color: #ffffff;
+    color: rgba(0, 0, 0, 0.6);
     display: block;
   }
 
   .sidenav a:hover {
-    color: #f1f1f1;
+    color: rgba(0, 0, 0, 0.3);
   }
 
   .main {
@@ -33,16 +42,20 @@ body {
   }
 
   @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {
+      padding-top: 15px;
+    }
+    .sidenav a {
+      font-size: 18px;
+    }
   }
 }
 
 .notice {
- margin: 0;
+  margin: 0;
 }
 
 .alert {
- margin: 0;
- color: red; 
+  margin: 0;
+  color: red;
 }

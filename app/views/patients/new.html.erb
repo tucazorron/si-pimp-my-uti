@@ -2,23 +2,25 @@
   <link rel="import" href="/app/views/layouts/sidebar.html.erb">
 </head>
 
-<h1>Cadastro de Paciente</h1>
+<div class="container">
+  <h1>Cadastro de Paciente</h1>
 
-<%= form_for :patient, url: patients_path(@patient)  do |f| %>
-  <%= f.label :nome %><br />
-  <%= f.text_field :name %><br />
+  <%= form_for :patient, url: patients_path(@patient)  do |f| %>
+    <%= f.label :nome %><br />
+    <%= f.text_field :name %><br />
 
-  <%= f.label :RG %><br />
-  <%= f.text_field :rg %><br />
+    <%= f.label :RG %><br />
+    <%= f.text_field :rg %><br />
 
-  <%= f.label :Causa %><br />
-  <%= f.text_field :cause %><br />
+    <%= f.label :Causa %><br />
+    <%= f.text_field :cause %><br />
 
-  <%= f.label :descrição %><br />
-  <%= f.text_field :description %><br />
+    <%= f.label :descrição %><br />
+    <%= f.text_field :description %><br />
 
-  <%= f.label :sexo %><br />
-  <%= f.text_field :gender_id %><br />
+    <%= f.label :sexo %><br />
+    <%= f.text_field :gender_id %><br />
 
-  <%= f.submit "Cadastrar" %>
-<% end %>
+    <%= f.submit "Cadastrar" %>
+  <% end %>
+</div>
