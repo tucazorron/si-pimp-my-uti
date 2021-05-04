@@ -1,0 +1,18 @@
+<h1>Cadastro de Leito</h1>
+
+<%= form_for :bed, url: beds_path(@bed)  do |f| %>
+  <%= f.label :ocupado %><br />
+  <%= f.check_box :busy %>
+
+  <%= f.label :tipo_de_leito %><br />
+  <%= f.text_field :bed_type_id %><br />
+
+  <%= f.label :paciente %><br />
+  <%= f.text_field :patient_id %><br />
+
+  <%= f.label :ala %><br />
+  <%= f.text_field :wing_id %><br />
+
+  <%= f.submit "Cadastrar" %>
+
+<% end %>

@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_04_28_200902) do
     t.boolean "busy"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "patient_id", null: false
+    t.integer "patient_id"
     t.integer "bed_type_id", null: false
     t.integer "wing_id", null: false
     t.index ["bed_type_id"], name: "index_beds_on_bed_type_id"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2021_04_28_200902) do
   end
 
   create_table "genders", force: :cascade do |t|
-    t.integer "code"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
