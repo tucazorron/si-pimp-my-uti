@@ -1,0 +1,32 @@
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  padding-left: 17rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  align-self: flex-start;
+  font-size: 28px;
+  font-family: "Roboto";
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  height: auto; 
+  width: 80%;
+
+  .col {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
