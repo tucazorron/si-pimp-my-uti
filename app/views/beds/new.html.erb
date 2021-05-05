@@ -1,26 +1,28 @@
 <div class="main-container">
-  <h1 class="page-title">Cadastro de Leito</h1>
   <%= form_for :bed, url: beds_path(@bed), html: {class: "form-container"}  do |f| %>
-    <div class="col">
-      <div class="input-wrapper">
-        <%= f.label :paciente %><br />
-        <%= f.collection_select :patient_id, Patient.order(:name),:id,:name, include_blank: true %>
+    <h1 class="page-title">Cadastro de Leito</h1>
+    <div class="form">
+      <div class="col">
+        <div class="input-wrapper">
+          <%= f.label :paciente %><br />
+          <%= f.collection_select :patient_id, Patient.order(:name),:id,:name, prompt: "Selecione o paciente" %>
+        </div>
+        <div class="checkbox-wrapper">
+          <%= f.label :ocupado %><br />
+          <%= f.check_box :busy %>
+        </div>
       </div>
-      <div class="input-wrapper">
-        <%= f.label :ocupado %><br />
-        <%= f.check_box :busy %>
+      <div class="col">
+        <div class="input-wrapper">
+          <%= f.label :tipo_de_leito %><br />
+          <%= f.collection_select :bed_type_id, BedType.order(:type_name),:id,:type_name, prompt: "Selecione o tipo do leito" %>
+        </div>
+        <div class="input-wrapper">
+          <%= f.label :ala %><br />
+          <%= f.collection_select :wing_id, Wing.order(:name),:id,:name, prompt: "Selecione a Ala" %>
+        </div>
+        <%= f.submit "Cadastrar", class: "btn" %>
       </div>
-    </div>
-    <div class="col">
-      <div class="input-wrapper">
-        <%= f.label :tipo_de_leito %><br />
-        <%= f.collection_select :bed_type_id, BedType.order(:type_name),:id,:type_name, include_blank: true %>
-      </div>
-      <div class="input-wrapper">
-        <%= f.label :ala %><br />
-        <%= f.collection_select :wing_id, Wing.order(:name),:id,:name, include_blank: true %>
-      </div>
-      <%= f.submit "Cadastrar", class: "btn" %>
     </div>
   <% end %>
 </div>

@@ -1,7 +1,8 @@
 <div class="main-container">
-  <h1 class="page-title">Cadastro de Paciente</h1>
   <%= form_for :patient, url: patients_path(@patient), html: {class: "form-container"}  do |f| %>
-    <div class="col">
+    <h1 class="page-title">Cadastro de Paciente</h1>
+    <div class="form">
+      <div class="col">
         <div class="input-wrapper">
         <%= f.label :nome %><br />
         <%= f.text_field :name, class: "input-box", placeholder: "Nome" %><br />
@@ -19,9 +20,9 @@
 
       <div class="input-wrapper">
         <%= f.label :sexo %><br />
-        <%= f.collection_select :gender_id, Gender.order(:name),:id,:name, include_blank: true %>
+        <%= f.collection_select :gender_id, Gender.order(:name),:id,:name, prompt: "Selecione o sexo do paciente" %>
       </div>
-    </div>
+      </div>
 
     <div class="col">
       <div class="input-wrapper">
@@ -33,6 +34,7 @@
         <%= f.text_field :description, class: "input-box", placeholder: "Descrição" %><br />
       </div>
       <%= f.submit "Cadastrar", class: "btn" %>
+    </div>
     </div>
   <% end %>
 </div>
