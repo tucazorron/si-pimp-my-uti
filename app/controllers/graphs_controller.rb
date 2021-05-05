@@ -1,9 +1,9 @@
 class GraphsController < ApplicationController
 
     def index
-        alaEsquerda = Hash.new
-        alaEsquerda = Bed
-        print (alaEsquerda)
+        @beds = Bed.all
+        @data = Bed.group(:busy).count 
+        datadata= 1
     end
     
     def create

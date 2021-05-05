@@ -1,3 +1,13 @@
 <div class="container margin">
- <h1 class="page-title">Dashboard<h1>
+        <h1 class="page-title" style="align-content:center">Dashboard</h1>
+            <div class="graphsOut">
+                <div class="graphsIn">
+                    <h2>Ocupação por Ala</h2>
+                    <%= bar_chart [ ["Ala Esquerda", "2"], ["Ala Sul", "15"], ["Ala Oeste", "7"], ["Ala Norte", "20"]]  %>
+                </div>
+                <div class="graphsIn">
+                    <h2>Ocupação por Tipo</h2>
+                    <%= bar_chart [ ["Geriatria", "6"], ["Cirurgia", "2"], ["COVID-19", "7"], ["Unidade Móvel", "20"]] %>
+                </div>
+            </div>
 </div>
