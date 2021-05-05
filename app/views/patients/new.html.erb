@@ -1,26 +1,35 @@
-<head>
-  <link rel="import" href="/app/views/layouts/sidebar.html.erb">
-</head>
-
 <div class="container margin">
-  <h1>Cadastro de Paciente</h1>
+  <div class="form-container">
+    <h1 class="page-title">Cadastro de Paciente</h1>
+    
+    <%= form_for :patient, url: patients_path(@patient)  do |f| %>
 
-  <%= form_for :patient, url: patients_path(@patient)  do |f| %>
-    <%= f.label :nome %><br />
-    <%= f.text_field :name %><br />
+    <div class="input-wrapper">
+      <%= f.label :nome %><br />
+      <%= f.text_field :name %><br />
+    </div>
 
-    <%= f.label :RG %><br />
-    <%= f.text_field :rg %><br />
+    <div class="input-wrapper">
+      <%= f.label :RG %><br />
+      <%= f.text_field :rg %><br />
+    </div>
 
-    <%= f.label :Causa %><br />
-    <%= f.text_field :cause %><br />
+    <div class="input-wrapper">
+      <%= f.label :Causa %><br />
+      <%= f.text_field :cause %><br />
+    </div>
 
-    <%= f.label :descrição %><br />
-    <%= f.text_field :description %><br />
+    <div class="input-wrapper">  
+      <%= f.label :descrição %><br />
+      <%= f.text_field :description %><br />
+    </div>
 
-    <%= f.label :sexo %><br />
-    <%= f.text_field :gender_id %><br />
+    <div class="input-wrapper">  
+      <%= f.label :sexo %><br />
+      <%= f.text_field :gender_id %><br />
+    </div>
 
-    <%= f.submit "Cadastrar" %>
-  <% end %>
+      <%= f.submit "Cadastrar" %>
+    <% end %>
+  </div>
 </div>
