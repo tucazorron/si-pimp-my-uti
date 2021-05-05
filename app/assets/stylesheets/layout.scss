@@ -65,7 +65,7 @@ body {
 }
 
 .divider {
-  border-top: 1px solid #bbb;
+  border-top: 1px solid rgb(53, 161, 204);
   width: 90%;
 }
 
@@ -81,9 +81,10 @@ body {
   width: 100%;
   align-items: flex-start;
   margin-left: 15rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 .page-title {
-  font-size: 34px;
+  font-size: 28px;
+  font-family: "Roboto";
 }
