@@ -1,20 +1,32 @@
-<div class="container">
-  <h1>Cadastro de Leito</h1>
+<div class="container margin">
+  <div class="form-container">
+    <h1 class="page-title">Cadastro de Leito</h1>
 
-  <%= form_for :bed, url: beds_path(@bed)  do |f| %>
-    <%= f.label :ocupado %><br />
-    <%= f.check_box :busy %>
+    <%= form_for :bed, url: beds_path(@bed)  do |f| %>
 
-    <%= f.label :tipo_de_leito %><br />
-    <%= f.text_field :bed_type_id %><br />
+      <div class="input-wrapper">
+        <%= f.label :ocupado %><br />
+        <%= f.check_box :busy %>
+      </div>
 
-    <%= f.label :paciente %><br />
-    <%= f.text_field :patient_id %><br />
+      <div class="input-wrapper">
+        <%= f.label :tipo_de_leito %><br />
+        <%= f.collection_select :bed_type_id, BedType.order(:type_name),:id,:type_name, include_blank: true %>
+      </div>
 
-    <%= f.label :ala %><br />
-    <%= f.text_field :wing_id %><br />
+      <div class="input-wrapper">
+        <%= f.label :paciente %><br />
+        <%= f.text_field :patient_id, class: "input-box" %><br />      
+      </div>
 
-    <%= f.submit "Cadastrar" %>
+      <div class="input-wrapper">
+        <%= f.label :ala %><br />
+        <%= f.collection_select :wing_id, Wing.order(:name),:id,:name, include_blank: true %>
+      </div>
 
-  <% end %>
+      <%= f.submit "Cadastrar", class: "btn" %>
+
+    <% end %>
+  </div>
+
 </div>

@@ -5,8 +5,12 @@ body {
   letter-spacing: 0.1px;
 
   .sidenav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     height: 100%;
-    width: 200px;
+    width: 17rem;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -58,4 +62,28 @@ body {
 .alert {
   margin: 0;
   color: red;
+}
+
+.divider {
+  border-top: 1px solid #bbb;
+  width: 90%;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  margin-left: 15rem;
+  margin-top: 5rem;
+}
+
+.page-title {
+  font-size: 34px;
 }
