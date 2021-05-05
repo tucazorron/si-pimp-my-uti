@@ -1,35 +1,38 @@
-<div class="container margin">
-  <div class="form-container">
-    <h1 class="page-title">Cadastro de Paciente</h1>
-    
-    <%= form_for :patient, url: patients_path(@patient)  do |f| %>
+<div class="right-container">
+  <h1 class="page-title">Cadastro de Paciente</h1>
+  <%= form_for :patient, url: patients_path(@patient), html: {class: "form-container"}  do |f| %>
+    <div class="col">
+        <div class="input-wrapper">
+        <%= f.label :nome %><br />
+        <%= f.text_field :name, class: "input-box", placeholder: "Nome" %><br />
+      </div>
 
-    <div class="input-wrapper">
-      <%= f.label :nome %><br />
-      <%= f.text_field :name %><br />
+      <div class="input-wrapper">
+        <%= f.label :RG %><br />
+        <%= f.text_field :rg, class: "input-box", placeholder: "RG" %><br />
+      </div>
+
+      <div class="input-wrapper">
+        <%= f.label :idade %><br />
+        <%= f.text_field :age, class: "input-box", placeholder: "Idade" %><br />
+      </div>
+
+      <div class="input-wrapper">
+        <%= f.label :sexo %><br />
+        <%= f.collection_select :gender_id, Gender.order(:name),:id,:name, include_blank: true %>
+      </div>
     </div>
 
-    <div class="input-wrapper">
-      <%= f.label :RG %><br />
-      <%= f.text_field :rg %><br />
+    <div class="col">
+      <div class="input-wrapper">
+        <%= f.label :motivo_da_internção %><br />
+        <%= f.text_field :cause, class: "input-box", placeholder: "Motivo da internação" %><br />
+      </div>
+      <div class="input-wrapper">  
+        <%= f.label :descrição %><br />
+        <%= f.text_field :description, class: "input-box", placeholder: "Descrição" %><br />
+      </div>
+      <%= f.submit "Cadastrar", class: "btn" %>
     </div>
-
-    <div class="input-wrapper">
-      <%= f.label :Causa %><br />
-      <%= f.text_field :cause %><br />
-    </div>
-
-    <div class="input-wrapper">  
-      <%= f.label :descrição %><br />
-      <%= f.text_field :description %><br />
-    </div>
-
-    <div class="input-wrapper">  
-      <%= f.label :sexo %><br />
-      <%= f.text_field :gender_id %><br />
-    </div>
-
-      <%= f.submit "Cadastrar" %>
-    <% end %>
-  </div>
+  <% end %>
 </div>
