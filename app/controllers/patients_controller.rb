@@ -9,6 +9,10 @@ class PatientsController < ApplicationController
     @patient = Patient.new(patient_params)
 
     if @patient.save
+     # Mark bed as *busy*
+      @bed = Bed.find(patient_params["bed_id"])
+      @bed['busy'] = true
+      @bed.save
       render json: @patient, status: :created, location: @patient
     else
       render json: @patient.errors, status: :unprocessable_entity
@@ -31,7 +35,7 @@ class PatientsController < ApplicationController
   end
 
   def patient_params
-    params.require(:patient).permit(:name, :rg, :age, :cause, :description, :gender_id)
+    params.require(:patient).permit(:name, :rg, :age, :cause, :description, :gender_id, :bed_id)
   end
 
 end

@@ -30,7 +30,7 @@ class BedsController < ApplicationController
   end
 
   def bed_params
-    params.require(:bed).permit(:busy, :patient_id, :bed_type_id, :wing_id)
+    params.require(:bed).permit(:busy, :bed_type_id, :wing_id)
   end
 
 end

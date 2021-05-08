@@ -29,6 +29,12 @@
         <%= f.label :motivo_da_internção %><br />
         <%= f.text_field :cause, class: "input-box", placeholder: "Motivo da internação" %><br />
       </div>
+
+      <div class="input-wrapper">
+        <%= f.label :leito %><br />
+        <%= f.collection_select :bed_id, Bed.order(:id).where("busy == false"),:id,:id, prompt: "Selecione o leito" %>
+      </div>      
+
       <div class="input-wrapper">  
         <%= f.label :descrição %><br />
         <%= f.text_field :description, class: "input-box", placeholder: "Descrição" %><br />

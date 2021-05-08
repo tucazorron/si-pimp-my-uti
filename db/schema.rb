@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_28_200902) do
+ActiveRecord::Schema.define(version: 2021_05_08_215140) do
 
   create_table "bed_types", force: :cascade do |t|
     t.string "type_name"
@@ -22,11 +22,9 @@ ActiveRecord::Schema.define(version: 2021_04_28_200902) do
     t.boolean "busy"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "patient_id"
     t.integer "bed_type_id", null: false
     t.integer "wing_id", null: false
     t.index ["bed_type_id"], name: "index_beds_on_bed_type_id"
-    t.index ["patient_id"], name: "index_beds_on_patient_id"
     t.index ["wing_id"], name: "index_beds_on_wing_id"
   end
 
@@ -45,6 +43,8 @@ ActiveRecord::Schema.define(version: 2021_04_28_200902) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "gender_id", null: false
+    t.integer "bed_id", null: false
+    t.index ["bed_id"], name: "index_patients_on_bed_id"
     t.index ["gender_id"], name: "index_patients_on_gender_id"
   end
 
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_04_28_200902) do
   end
 
   add_foreign_key "beds", "bed_types"
-  add_foreign_key "beds", "patients"
   add_foreign_key "beds", "wings"
+  add_foreign_key "patients", "beds"
   add_foreign_key "patients", "genders"
 end

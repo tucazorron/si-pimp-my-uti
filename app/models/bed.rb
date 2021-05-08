@@ -1,5 +1,5 @@
 class Bed < ApplicationRecord
   has_one :bed_type
   has_one :wing
-  has_one :patient
+  belongs_to :patient, optional: true
 end

@@ -17,13 +17,14 @@ BedType.create!([{ type_name: 'tipo1' }, { type_name: 'tipo2' }])
 
 Wing.create!([{name: 'Ala Norte'}, { name: 'Ala Sul' } ])
 
-Patient.create!([
-  {name: 'Artur', rg: '123456789', age: 82, cause: 'COVID-19', description: 'Está em tratamento de COVID-19', gender_id: 1},
-  {name: 'Vinicius', rg: '987654321', age: 66, cause: 'COVID-19', description: 'Está em tratamento de COVID-19', gender_id: 1}
+Bed.create!([
+  {busy: true, bed_type_id: 1, wing_id: 1},
+  {busy: false, bed_type_id: 1, wing_id: 1},
+  {busy: true, bed_type_id: 1, wing_id: 1},
 ])
 
-Bed.create!([
-  {busy: true, patient_id: 1, bed_type_id: 1, wing_id: 1},
-  {busy: false, patient_id: nil, bed_type_id: 1, wing_id: 1},
-  {busy: true, patient_id: 2, bed_type_id: 1, wing_id: 1},
+Patient.create!([
+  {name: 'Artur', rg: '123456789', age: 82, cause: 'COVID-19', description: 'Está em tratamento de COVID-19', gender_id: 1, bed_id: 1},
+  {name: 'Vinicius', rg: '987654321', age: 66, cause: 'COVID-19', description: 'Está em tratamento de COVID-19', gender_id: 1, bed_id: 3}
 ])
+
