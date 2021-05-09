@@ -33,7 +33,7 @@
       <div class="input-wrapper">
         <%= f.label :leito %><br />
         <%= f.collection_select :bed_id, Bed.order(:id).where("busy == false"),:id,:id, prompt: "Selecione o leito" %>
-      </div>      
+      </div>
 
       <div class="input-wrapper">  
         <%= f.label :descrição %><br />

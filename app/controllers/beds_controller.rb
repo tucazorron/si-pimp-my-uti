@@ -8,7 +8,7 @@ class BedsController < ApplicationController
   def create
     @bed = Bed.new(bed_params)
     if @bed.save
-      render json: @bed, status: :created, location: @bed
+      redirect_to :authenticated_root
     else
       render json: @bed.errors, status: :unprocessable_entity
     end

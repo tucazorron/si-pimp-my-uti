@@ -13,7 +13,7 @@ class PatientsController < ApplicationController
       @bed = Bed.find(patient_params["bed_id"])
       @bed['busy'] = true
       @bed.save
-      render json: @patient, status: :created, location: @patient
+      redirect_to :authenticated_root
     else
       render json: @patient.errors, status: :unprocessable_entity
     end
