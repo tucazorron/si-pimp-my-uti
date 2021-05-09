@@ -7,5 +7,6 @@
       <p> <b>Paciente:</b> <%= Patient.find_by(bed_id: Bed.first.id).name %> </p>
       <p> <b>Entrada:</b> <%= Patient.find_by(bed_id: Bed.first.id).created_at %> </p>
     <% end %>
+    <%= link_to "Editar Leito", bed %>
   </div>  
 </li>
