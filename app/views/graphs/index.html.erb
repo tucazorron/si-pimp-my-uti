@@ -3,11 +3,11 @@
             <div class="graphsOut">
                 <div class="graphsIn">
                     <h2>Ocupação por Ala</h2>
-                    <%= bar_chart [ ["Ala Esquerda", "2"], ["Ala Sul", "15"], ["Ala Oeste", "7"], ["Ala Norte", "20"]]  %>
+                    <%= bar_chart Bed.group(:wing_id).where("busy == true").count.transform_keys { |key| Wing.find(key).name }  %>
                 </div>
                 <div class="graphsIn">
                     <h2>Ocupação por Tipo</h2>
-                    <%= bar_chart [ ["Geriatria", "6"], ["Cirurgia", "2"], ["COVID-19", "7"], ["Unidade Móvel", "20"]] %>
+                    <%= bar_chart Bed.group(:bed_type_id).where("busy == true").count.transform_keys { |key| BedType.find(key).type_name } %>
                 </div>
             </div>
 </div>
