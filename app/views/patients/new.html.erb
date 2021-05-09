@@ -1,9 +1,9 @@
 <div class="main-container">
   <%= form_for :patient, url: patients_path(@patient), html: {class: "form-container"}  do |f| %>
-    <h1 class="page-title">Cadastro de Paciente</h1>
-    <div class="form">
-      <div class="col">
-        <div class="input-wrapper">
+  <h1 class="page-title">Cadastro de Paciente</h1>
+  <div class="form">
+    <div class="col">
+      <div class="input-wrapper">
         <%= f.label :nome %><br />
         <%= f.text_field :name, class: "input-box", placeholder: "Nome" %><br />
       </div>
@@ -22,7 +22,7 @@
         <%= f.label :sexo %><br />
         <%= f.collection_select :gender_id, Gender.order(:name),:id,:name, prompt: "Selecione o sexo do paciente" %>
       </div>
-      </div>
+    </div>
 
     <div class="col">
       <div class="input-wrapper">
@@ -35,12 +35,12 @@
         <%= f.collection_select :bed_id, Bed.order(:id).where("busy == false"),:id,:name, prompt: "Selecione o leito" %>
       </div>
 
-      <div class="input-wrapper">  
+      <div class="input-wrapper">
         <%= f.label :descrição %><br />
-        <%= f.text_field :description, class: "input-box", placeholder: "Descrição" %><br />
+        <%= f.text_area :description, rows: 10, class: 'text-area-box', placeholder: "Descrição" %><br />
       </div>
       <%= f.submit "Cadastrar", class: "btn" %>
     </div>
-    </div>
+  </div>
   <% end %>
 </div>
