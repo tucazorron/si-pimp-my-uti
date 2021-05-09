@@ -13,3 +13,22 @@ body {
   margin: 1rem;
   color: red;
 }
+
+// Index page
+.list-container {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.page-item {
+  width: 50%;
+  height: auto;
+  background-color: #F8F8F8;
+  margin: 1rem;
+  list-style: none;
+  padding: 1rem;
+}

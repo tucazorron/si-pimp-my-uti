@@ -1,6 +1,11 @@
-<li>
+<li class="page-item">
   <div>
-    <p> Numero do Leito: <%= bed.id %> </p>
-    <p> Ocupação: <%= bed.busy %> </p>
+    <p> <b>Numero do Leito:</b> <%= bed.id %> </p>
+    <p> <b>Ocupação:</b> <%= bed.busy ? "Sim" : "Não" %> </p>
+    <p> <b> Ala:  </b> <%= Wing.find(Bed.first.wing_id).name %> </p>
+    <% if bed.busy then %>
+      <p> <b>Paciente:</b> <%= Patient.find_by(bed_id: Bed.first.id).name %> </p>
+      <p> <b>Entrada:</b> <%= Patient.find_by(bed_id: Bed.first.id).created_at %> </p>
+    <% end %>
   </div>  
 </li>
