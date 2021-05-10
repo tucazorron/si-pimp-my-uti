@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_05_09_133921) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "gender_id", null: false
-    t.integer "bed_id", null: false
+    t.integer "bed_id"
     t.index ["bed_id"], name: "index_patients_on_bed_id"
     t.index ["gender_id"], name: "index_patients_on_gender_id"
   end

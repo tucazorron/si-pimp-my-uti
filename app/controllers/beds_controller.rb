@@ -1,4 +1,5 @@
 class BedsController < ApplicationController
+  before_action :set_bed, only: [:show, :update, :destroy]
 
   def index
     @beds = Bed.all
@@ -19,7 +20,14 @@ class BedsController < ApplicationController
 
   def show
     @bed = Bed.find(params[:id])
-    render json: @bed
+  end
+
+  def update
+    if @bed.update(bed_params)
+      redirect_to beds_path
+    else
+      render status: :unprocessable_entity
+    end
   end
 
   private

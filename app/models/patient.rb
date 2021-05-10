@@ -1,4 +1,4 @@
 class Patient < ApplicationRecord
-  has_one :bed
+  belongs_to :bed, optional: true
   belongs_to :gender
 end
