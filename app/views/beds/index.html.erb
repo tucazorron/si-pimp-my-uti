@@ -1,10 +1,6 @@
-<h1>Beds#index</h1>
-<p>Find me in app/views/beds/index.html.erb</p>
-
-<% @beds.each do |bed| %>
-    <tr>
-      <td><%= bed.busy %></td>
-      <td><%= bed.bed_type_id %></td>
-      <td><%= bed.wing_id %></td>
-    </tr>
-<% end %>
+<div class="main-container">
+  <h1>Monitoramento de Leitos</h1>
+  <ul class="list-container">
+    <%= render @beds %>
+  </ul>
+</div>

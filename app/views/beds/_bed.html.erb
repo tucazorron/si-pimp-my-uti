@@ -2,11 +2,11 @@
   <div>
     <p> <b>Numero do Leito:</b> <%= bed.id %> </p>
     <p> <b>Ocupação:</b> <%= bed.busy ? "Sim" : "Não" %> </p>
-    <p> <b> Ala:  </b> <%= Wing.find(Bed.first.wing_id).name %> </p>
+    <p> <b> Ala: </b> <%= bed.wing.name %> </p>
     <% if bed.busy then %>
-      <p> <b>Paciente:</b> <%= Patient.find_by(bed_id: Bed.first.id).name %> </p>
-      <p> <b>Entrada:</b> <%= Patient.find_by(bed_id: Bed.first.id).created_at %> </p>
+    <p> <b>Paciente:</b> <%= Patient.find_by(bed_id: bed.id).name %> </p>
+    <p> <b>Entrada:</b> <%= Patient.find_by(bed_id: bed.id).created_at %> </p>
     <% end %>
     <%= link_to "Editar Leito", bed %>
-  </div>  
+  </div>
 </li>
